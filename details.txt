@@ -1,0 +1,7 @@
+1)KPCC - laist admin ping check failture
+
+2)KPCC - laist ping check faiture
+
+3) In barfoot we have received catalog search failing
+
+
