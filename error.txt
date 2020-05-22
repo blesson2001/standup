@@ -1,0 +1,55 @@
+distiller@ip-172-31-28-202:~$ kubectl logs --since=4h distiller-56cf85955f-8h7gn -c distiller -n app |grep "ea115b08d18c5cde5f59fe3d805ffb19"
+[ea115b08d18c5cde5f59fe3d805ffb19] method=GET path=/profile/james-alire/lists/wishlist format=html controller=UserSpiritListsController action=show status=500 error='NoMethodError: undefined method `user_spirit_lists' for nil:NilClass' duration=7.70 view=0.00 db=1.67
+[ea115b08d18c5cde5f59fe3d805ffb19]   
+[ea115b08d18c5cde5f59fe3d805ffb19] NoMethodError (undefined method `user_spirit_lists' for nil:NilClass):
+[ea115b08d18c5cde5f59fe3d805ffb19]   
+[ea115b08d18c5cde5f59fe3d805ffb19] app/controllers/user_spirit_lists_controller.rb:20:in `find_list'
+[ea115b08d18c5cde5f59fe3d805ffb19] method=GET path=/500 format=html controller=ErrorsController action=internal_server_error status=500 duration=30.86 view=26.23 db=3.51
+distiller@ip-172-31-28-202:~$ kubectl logs --since=4h distiller-56cf85955f-8h7gn -c distiller -n app |grep "a0223110fbb1002472af4cedeba663d9"
+[a0223110fbb1002472af4cedeba663d9] method=GET path=/api/v2/spirits/upc_search.json format=json controller=Api::V2::SpiritsController action=upc_search status=500 error='NoMethodError: undefined method `slug' for nil:NilClass' duration=2146.96 view=0.00 db=30.74
+[a0223110fbb1002472af4cedeba663d9]   
+[a0223110fbb1002472af4cedeba663d9] NoMethodError (undefined method `slug' for nil:NilClass):
+[a0223110fbb1002472af4cedeba663d9]   
+[a0223110fbb1002472af4cedeba663d9] app/decorators/api/v2/upc_decorator.rb:12:in `exact_match'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:34:in `block in write_attrs'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:8:in `block in loop_attrs'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:2:in `each'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:2:in `loop_attrs'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:32:in `write_attrs'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:27:in `block (3 levels) in json_attrs'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:26:in `tap'
+[a0223110fbb1002472af4cedeba663d9] app/decorators/json_attrs.rb:26:in `block (2 levels) in json_attrs'
+[a0223110fbb1002472af4cedeba663d9] app/controllers/api/v2/spirits_controller.rb:30:in `block (2 levels) in upc_search'
+[a0223110fbb1002472af4cedeba663d9] app/controllers/api/v2/spirits_controller.rb:28:in `upc_search'
+[a0223110fbb1002472af4cedeba663d9] method=GET path=/500 format=json controller=ErrorsController action=internal_server_error status=500 duration=0.77 view=0.11 db=0.00
+distiller@ip-172-31-28-202:~$ kubectl logs --since=4h distiller-56cf85955f-8h7gn -c distiller -n app |grep "922dbce45bfc0dd2c89b3c4165a8ea40"
+[922dbce45bfc0dd2c89b3c4165a8ea40] method=GET path=/api/v2/content_blocks/pro.json format=json controller=Api::V2::ContentBlocksController action=show status=500 error='Module::DelegationError: ContentBlockDecorator#id delegated to object.id, but object is nil: #<ContentBlockDecorator:0x00007fb3da7b9658 @object=nil, @context={}>' duration=1933.95 view=0.00 db=1923.59
+[922dbce45bfc0dd2c89b3c4165a8ea40]   
+[922dbce45bfc0dd2c89b3c4165a8ea40] Module::DelegationError (ContentBlockDecorator#id delegated to object.id, but object is nil: #<ContentBlockDecorator:0x00007fb3da7b9658 @object=nil, @context={}>):
+[922dbce45bfc0dd2c89b3c4165a8ea40]   
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:34:in `block in write_attrs'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:8:in `block in loop_attrs'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:2:in `each'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:2:in `loop_attrs'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:32:in `write_attrs'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:27:in `block (3 levels) in json_attrs'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:26:in `tap'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/decorators/json_attrs.rb:26:in `block (2 levels) in json_attrs'
+[922dbce45bfc0dd2c89b3c4165a8ea40] app/controllers/api/v2/content_blocks_controller.rb:14:in `show'
+[922dbce45bfc0dd2c89b3c4165a8ea40] method=GET path=/500 format=json controller=ErrorsController action=internal_server_error status=500 duration=0.98 view=0.18 db=0.00
+distiller@ip-172-31-28-202:~$ kubectl logs --since=4h distiller-56cf85955f-8h7gn -c distiller -n app |grep "840c5f7c9ba4fff58ab0d82c46278357"
+[840c5f7c9ba4fff58ab0d82c46278357] method=GET path=/api/v2/content_blocks/pro.json format=json controller=Api::V2::ContentBlocksController action=show status=500 error='Module::DelegationError: ContentBlockDecorator#id delegated to object.id, but object is nil: #<ContentBlockDecorator:0x000055d9ab6c9d98 @object=nil, @context={}>' duration=58.95 view=0.00 db=39.32
+[840c5f7c9ba4fff58ab0d82c46278357]   
+[840c5f7c9ba4fff58ab0d82c46278357] Module::DelegationError (ContentBlockDecorator#id delegated to object.id, but object is nil: #<ContentBlockDecorator:0x000055d9ab6c9d98 @object=nil, @context={}>):
+[840c5f7c9ba4fff58ab0d82c46278357]   
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:34:in `block in write_attrs'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:8:in `block in loop_attrs'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:2:in `each'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:2:in `loop_attrs'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:32:in `write_attrs'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:27:in `block (3 levels) in json_attrs'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:26:in `tap'
+[840c5f7c9ba4fff58ab0d82c46278357] app/decorators/json_attrs.rb:26:in `block (2 levels) in json_attrs'
+[840c5f7c9ba4fff58ab0d82c46278357] app/controllers/api/v2/content_blocks_controller.rb:14:in `show'
+[840c5f7c9ba4fff58ab0d82c46278357] method=GET path=/500 format=json controller=ErrorsController action=internal_server_error status=500 duration=0.77 view=0.11 db=0.00
+
