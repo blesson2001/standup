@@ -1,0 +1,7 @@
+1) LAist ping Check Failure >> KPCC
+
+2) Received an request from will in barefoot to create a user  and give access to it and its completed and waiting for the customer confirmation.
+
+3) Barefoot Books (catalogsearch) is failing >> barefoot
+we have ran the reindex and now its resolved
+
